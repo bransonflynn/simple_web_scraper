@@ -10,9 +10,10 @@ fn main() {
     std::println!("[SIMPLE WEB SCRAPER]");
 
     // prompt user for url
+    // https://www.scrapingcourse.com/ecommerce/
     let mut url_entry: String;
     loop {
-        std::println!("Enter your URL: ");
+        std::print!("Enter your URL: ");
         url_entry = String::new();
         std::io::stdin()
             .read_line(&mut url_entry)
@@ -83,4 +84,12 @@ fn main() {
         writer.write_record(&[url, image, name, price]).unwrap();
     }
     writer.flush().unwrap();
+
+
+    let mut shutdown_entry: String;
+    std::println!("Program completed. Check products.csv for output. (Press enter to exit)");
+    shutdown_entry = String::new();
+    std::io::stdin()
+        .read_line(&mut shutdown_entry)
+        .expect("error: unable to read user input");
 }
