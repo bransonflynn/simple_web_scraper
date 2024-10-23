@@ -1,4 +1,3 @@
-#[allow(dead_code)]
 struct Product {
     url: Option<String>,
     image: Option<String>,
